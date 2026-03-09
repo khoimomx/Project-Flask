@@ -1,10 +1,13 @@
-    fileInput.addEventListener('change', (e) => {
+let encodedtext = ''
+let fileobj = null
+fileInput.addEventListener('change', (e) => {
     fileobj = e.target.files[0];
     const reader = new FileReader();
     reader.onload = (ev) =>{
         fileContent.textContent = ev.target.result;
     } 
     reader.readAsText(fileobj);
+    encName.textContent = fileobj.name
 })
 encBtn.addEventListener('click', async () => {
 
@@ -15,8 +18,16 @@ encBtn.addEventListener('click', async () => {
     const res  = await fetch('/encode', { method: 'POST', body: data })
     const json = await res.json()
     encContent.textContent = json.encoded_content
-    encName.textContent    = json.encoded_file
     encodedtext            = json.encoded_content
+})
+eyeBtn.addEventListener('click', () => {
+    if (passwordInput.type === 'text') {
+        passwordInput.type = 'password'    // hiện password
+        eyeBtn.textContent = '🙈'
+    } else {
+        passwordInput.type = 'text' // ẩn password
+        eyeBtn.textContent = '👁️'
+    }
 })
 dlBtn.addEventListener('click', () => {
     if(!encodedtext){
