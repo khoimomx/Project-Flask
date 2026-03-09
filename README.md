@@ -1,1 +1,2 @@
-# Project-Flask
+Mini Full Stack Project
+Encode file 
