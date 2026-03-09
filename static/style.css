@@ -1,0 +1,91 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:#f2f2f2;
+    display:flex;
+    justify-content:center;
+    align-items: flex-start;
+    padding-top:80px;
+}
+.file-group{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+.password-field{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+}
+.eyeBtn{
+    position: absolute;
+    right : 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor:pointer;
+}
+.container{
+    width:900px;
+    background:white;
+
+    border-radius:12px;
+    padding:30px;
+    border-top:6px solid #673ab7;
+    box-shadow:0 6px 25px rgba(0,0,0,0.1);
+}
+
+.controls, .eyeBtn{
+    display:flex;
+    gap:10px;
+    margin-bottom:20px;
+}
+
+input[type="file"]{
+    display:none;
+}
+
+.file-btn{
+    background:#3498db;
+    color:white;
+    padding:8px 15px;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+#passwordInput{
+    padding:8px;
+}
+
+button{
+    padding:8px 15px;
+    border:none;
+    background:#2ecc71;
+    color:white;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+.content{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+}
+
+.box{
+    background:white;
+    padding:15px;
+    border-radius:8px;
+    height:300px;
+    overflow:auto;
+    box-shadow:0 3px 10px rgba(0,0,0,0.1);
+}
+
+pre{
+    white-space:pre-wrap;
+}
