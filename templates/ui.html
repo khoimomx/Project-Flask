@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>File Encoder</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        input, button {
+            margin: 10px 0;
+        }   
+    </style>
+   
+</head>
+<body>
+    <!-- Giao diện -->
+    <input type="file" id="fileInput">
+    <input type="password" id="passwordInput">
+    <button id="encBtn">Encode</button>
+    <button id="dlBtn">Download</button>
+
+    <nav id="fileContent"></nav>
+    <nav id="encContent"></nav>
+    <nav id="encName"></nav>
+
+    <script src="{{ url_for('static', filename='response.js') }}"></script>
+</body>
+</html>
