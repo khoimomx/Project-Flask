@@ -2,27 +2,46 @@
 <html>
 <head>
     <title>File Encoder</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-        }
-        input, button {
-            margin: 10px 0;
-        }   
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{{ url_for('static', filename='imgg/ptit.jpg') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
    
 </head>
 <body>
-    <!-- Giao diện -->
-    <input type="file" id="fileInput">
-    <input type="password" id="passwordInput">
-    <button id="encBtn">Encode</button>
-    <button id="dlBtn">Download</button>
+<div class="container">
 
-    <nav id="fileContent"></nav>
-    <nav id="encContent"></nav>
-    <nav id="encName"></nav>
+    <div class="controls">
+        <div class="file-group">
+            <label class="file-btn">
+                Choose File
+                <input type="file" id="fileInput">
+            </label>
+            <span id="encName">No file selected</span>
+        </div>
+        <div class="password-field">
+            <input type="password" id="passwordInput" placeholder="Password">
+            <span id="eyeBtn" class="eyeBtn">👁️</span>
+        </div>
+        <button id="encBtn">Encode</button>
+        <button id="dlBtn">Download</button>
+    </div>
+
+    <div class="content">
+
+        <div class="box">
+            <h3>File Content</h3>
+            <pre id="fileContent"></pre>
+        </div>
+
+        <div class="box">
+            <h3>Encoded Content</h3>
+            <pre id="encContent"></pre>
+        </div>
+
+    </div>
+
+</div>
 
     <script src="{{ url_for('static', filename='response.js') }}"></script>
 </body>
