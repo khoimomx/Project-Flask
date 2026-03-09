@@ -25,8 +25,7 @@ def encode():
     content = file.read().decode('utf-8', errors='ignore')
     encoded= xor_encrypt(content,CONST_PASSWORD)
     
-    return jsonify({'encoded_content': encoded,
-                    'encoded_file': file.filename.replace('.txt', '_encoded.txt')})
+    return jsonify({'encoded_content': encoded})
 
 
 @app.route('/download', methods=['POST'])
