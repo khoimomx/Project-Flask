@@ -1,7 +1,6 @@
 from flask  import Flask, request, jsonify, render_template,send_file
 import io 
 app = Flask(__name__, static_folder='static', template_folder='templates')
-CONST_PASSWORD='khoimomxdz'
 
 @app.route('/')
 def index():
@@ -19,11 +18,9 @@ def xor_encrypt(data, key):
 @app.route('/encode', methods=['POST'])
 def encode():
     password=request.form.get('password')
-    if password != CONST_PASSWORD:
-        return jsonify({'error': 'Unauthorized'})
     file = request.files['file']
     content = file.read().decode('utf-8', errors='ignore')
-    encoded= xor_encrypt(content,CONST_PASSWORD)
+    encoded= xor_encrypt(content,password)
     
     return jsonify({'encoded_content': encoded})
 
@@ -39,3 +36,4 @@ def download():
 
 if __name__ == '__main__':
     app.run(debug=True, port=5500)
+
